@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import AdvancedGridList from "./AdvancedGridList";
+import GifElement from "./GifElement.js";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 const GifElements = ({ category }) => {
-  const { data, loading } = useFetchGifs(category);
+  const { data: images, loading } = useFetchGifs(category);
   return (
     <>
-      <h3>{category}</h3>
+      <h4>{category}</h4>
       {loading && (
         <p className="animate__animated animate__flash">Loading...</p>
       )}
-      <AdvancedGridList images={data} />
+      <div className="grid">
+        {images.map((img) => (
+          <GifElement key={img.id} img={img} />
+        ))}
+      </div>
     </>
   );
 };
@@ -20,3 +24,4 @@ GifElements.propTypes = {
 };
 
 export default GifElements;
+//  <AdvancedGridList images={images} />

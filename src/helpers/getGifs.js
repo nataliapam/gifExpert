@@ -6,18 +6,20 @@ export const getGifs = async (category) => {
   try {
     const resp = await fetch(url);
     const { data } = await resp.json();
-
+    console.log(data);
     const gifs = data.map((img) => {
       return {
         id: img.id,
         title: img.title,
-        img: img.images.downsized_medium.url,
-        featured: true,
+        img: img.images.fixed_height.url,
+        height: img.images.fixed_height.height,
+        width: img.images.fixed_height.width,
+        source: img.source_post_url,
+        type: img.type.substr(0, 1).toUpperCase(),
+        original: img.images.original.url,
       };
     });
     return gifs;
-    //  setImages(gifs);
-    //zconsole.log(gifs);
   } catch (error) {
     console.log(error);
   }

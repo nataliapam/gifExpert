@@ -1,6 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import "./index.css";
 import GifExpertApp from "./GifExpertApp";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
-ReactDOM.render(<GifExpertApp />, document.getElementById("root"));
+const app = () => (
+  <>
+    <CssBaseline />
+    <GifExpertApp />
+  </>
+);
+
+render(app(), document.getElementById("root"));

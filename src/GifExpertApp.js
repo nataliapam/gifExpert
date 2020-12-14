@@ -17,11 +17,9 @@ const GifExpertApp = (props) => {
       <hr />
       <AddCategory handleAdd={handleSubmit} category={categories} />
 
-      <ol>
-        {categories.map((el) => {
-          return <GifElements key={el} category={el} />;
-        })}
-      </ol>
+      {categories.map((el) => {
+        return <GifElements key={el} category={el} />;
+      })}
     </>
   );
 };

@@ -1,9 +1,13 @@
 * {
   font-family: Helvetica, Arial, sans-serif;
 }
+a {
+  text-decoration: none;
+}
 body {
   margin: 0;
-  padding: 60px;
+  padding-left: 36px;
+  margin-right: 36px;
 }
 button {
   padding: 10px;
@@ -21,4 +25,10 @@ input {
   border: 1px grey solid;
   border-radius: 10px;
   margin-bottom: 8px;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
