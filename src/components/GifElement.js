@@ -43,10 +43,9 @@ export default function GifElement({ img }) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const height = "300px";
-  const width = "300px";
+  console.log(img);
   return (
-    <Card style={{ width: width, minHeight: height, margin: "16px" }}>
+    <Card style={{ width: "300px", minHeight: "300px", margin: "16px" }}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -83,16 +82,18 @@ export default function GifElement({ img }) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
+        {img.source !== "" && (
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        )}
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>

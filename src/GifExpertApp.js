@@ -3,7 +3,7 @@ import AddCategory from "./components/AddCategory";
 import GifElements from "./components/GifElements";
 
 const GifExpertApp = (props) => {
-  const [categories, setCategories] = useState(["Chinchilla"]);
+  const [categories, setCategories] = useState(["The Office"]);
 
   const handleSubmit = (value) => {
     if (value.length > 2) {

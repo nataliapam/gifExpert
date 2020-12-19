@@ -8,10 +8,12 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: "33%",
     padding: "2px 4px",
     display: "flex",
     alignItems: "center",
-    width: 400,
+    margin: "auto",
+    marginBottom: "10px",
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -24,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AddCategory = (props) => {
   const classes = useStyles();
-  const [inputValue, setInputValue] = useState(props.category);
+  const [inputValue, setInputValue] = useState("");
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
